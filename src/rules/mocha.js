@@ -4,7 +4,7 @@ export default {
   // handle-done-callback - enforces handling of callbacks for async tests
   "mocha/handle-done-callback": [2],
   // no-synchronous-tests - disallow synchronous tests
-  "mocha/no-synchronous-tests": [2],
+  "mocha/no-synchronous-tests": [0],
   // no-global-tests - disallow global tests
   "mocha/no-global-tests": [2],
 };
