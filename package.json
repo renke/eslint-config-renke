@@ -1,7 +1,7 @@
 {
   "name": "eslint-config-renke",
   "version": "0.0.1",
-  "description": "eslint-config-renke",
+  "description": "My personal ESLint config",
   "license": "ISC",
   "author": {
     "name": "Renke Grunwald",

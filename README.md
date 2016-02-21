@@ -1,5 +1,7 @@
 # eslint-config-renke
 
+My personal ESLint config.
+
 ## Installation
 
 ```sh
