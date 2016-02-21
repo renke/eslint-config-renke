@@ -7,7 +7,7 @@
     "name": "Renke Grunwald",
     "email": "renke@renke.org"
   },
-  "main": "lib",
+  "main": "config",
   "repository": "renke/eslint-config-renke",
   "scripts": {
     "build": "babel src --out-dir config",
