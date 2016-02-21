@@ -2,4 +2,6 @@
 /npm-debug.log
 eslint-config-renke-*.tgz
 
-/lib
+/config
+
+/*.js

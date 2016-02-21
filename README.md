@@ -3,7 +3,7 @@
 ## Installation
 
 ```sh
-npm install --save eslint-config-renke
+npm install --save-dev eslint-config-renke
 ```
 
 ## Usage
