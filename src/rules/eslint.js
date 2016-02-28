@@ -4,7 +4,7 @@ export default {
 // * [no-cond-assign](no-cond-assign.md) - disallow assignment in conditional expressions (recommended)
   "no-cond-assign": [2, "except-parens"],
 // * [no-console](no-console.md) - disallow use of `console` (recommended)
-  "no-console": [2],
+  "no-console": [1],
   // * [no-constant-condition](no-constant-condition.md) - disallow use of constant expressions in conditions (recommended)
   "no-constant-condition": [2],
   // * [no-control-regex](no-control-regex.md) - disallow control characters in regular expressions (recommended)
@@ -72,7 +72,7 @@ export default {
   // * [dot-location](dot-location.md) - enforces consistent newlines before or after dots
   "dot-location": [2, "property"],
   // * [dot-notation](dot-notation.md) - encourages use of dot notation whenever possible
-  "dot-notation": [2],
+  "dot-notation": [2, {allowPattern: "^[a-zA-Z]+(_[a-zA-Z]+)+$"}],
   // * [eqeqeq](eqeqeq.md) - require the use of `===` and `!==`
   eqeqeq: [2],
   // * [guard-for-in](guard-for-in.md) - make sure `for-in` loops have an `if` statement
@@ -106,7 +106,7 @@ export default {
   // * [no-floating-decimal](no-floating-decimal.md) - disallow the use of leading or trailing decimal points in numeric literals
   "no-floating-decimal": [2],
   // * [no-implicit-coercion](no-implicit-coercion.md) - disallow the type conversions with shorter notations
-  "no-implicit-coercion": [2],
+  "no-implicit-coercion": [2, {allow: ["!!"/* "!!", "~", "*", "+" */]}],
   // * [no-implicit-globals](no-implicit-globals.md) - disallow `var` and named functions in global scope
   "no-implicit-globals": [2],
   // * [no-implied-eval](no-implied-eval.md) - disallow use of `eval()`-like methods
@@ -176,7 +176,7 @@ export default {
   // * [no-with](no-with.md) - disallow use of the `with` statement
   "no-with": [2],
   // * [radix](radix.md) - require use of the second argument for `parseInt()`
-  radix: [2],
+  radix: [2, "as-needed"],
   // * [vars-on-top](vars-on-top.md) - require declaration of all vars at the top of their containing scope
   "vars-on-top": [2],
   // * [wrap-iife](wrap-iife.md) - require immediate function invocation to be wrapped in parentheses
@@ -186,7 +186,7 @@ export default {
   // * [strict](strict.md) - require effective use of strict mode directives
   strict: [2, "never"],
   // * [init-declarations](init-declarations.md) - enforce or disallow variable initializations at definition
-  "init-declarations": [2, "always"],
+  "init-declarations": [0, "always"], // TODO
   // * [no-catch-shadow](no-catch-shadow.md) - disallow the catch clause parameter name being the same as a variable in the outer scope
   "no-catch-shadow": [2],
   // * [no-delete-var](no-delete-var.md) - disallow deletion of variables (recommended)
@@ -206,7 +206,7 @@ export default {
   // * [no-unused-vars](no-unused-vars.md) - disallow declaration of variables that are not used in the code (recommended)
   "no-unused-vars": [2, {vars: "all", args: "after-used"}],
   // * [no-use-before-define](no-use-before-define.md) - disallow use of variables before they are defined
-  "no-use-before-define": [2, {functions: true, classes: true}],
+  "no-use-before-define": [2, {functions: false, classes: true}],
   // * [callback-return](callback-return.md) - enforce `return` after a callback
   "callback-return": [2, ["callback", "cb", "next"]],
   // * [global-require](global-require.md) - enforce `require()` on top-level module scope
@@ -234,7 +234,7 @@ export default {
   // * [brace-style](brace-style.md) - enforce one true brace style
   "brace-style": [2, "1tbs"],
   // * [camelcase](camelcase.md) - require camel case names
-  camelcase: [2, {properties: "always"}],
+  camelcase: [2, {properties: "never"}],
   // * [comma-spacing](comma-spacing.md) - enforce spacing before and after comma (fixable)
   "comma-spacing": [2, {before: false, after: true}],
   // * [comma-style](comma-style.md) - enforce one true comma style
@@ -248,7 +248,7 @@ export default {
   // * [func-names](func-names.md) - require function expressions to have a name
   "func-names": [2],
   // * [func-style](func-style.md) - enforce use of function declarations or expressions
-  "func-style": [2, "declaration"],
+  "func-style": [2, "declaration", {allowArrowFunctions: true}],
   // * [id-blacklist](id-blacklist.md) - blacklist certain identifiers to prevent them being used
   "id-blacklist": [2], // TODO
   // * [id-length](id-length.md) - this option enforces minimum and maximum identifier lengths (variable names, property names etc.)
@@ -274,9 +274,9 @@ export default {
   // * [max-nested-callbacks](max-nested-callbacks.md) - specify the maximum depth callbacks can be nested
   "max-nested-callbacks": [2, 10],
   // * [max-params](max-params.md) - limits the number of parameters that can be used in the function declaration
-  "max-params": [2], // TODO
+  "max-params": [2, 5], // TODO
   // * [max-statements](max-statements.md) - specify the maximum number of statement allowed in a function
-  "max-statements": [2, 10], // TODO
+  "max-statements": [2, 50], // TODO
   // * [new-cap](new-cap.md) - require a capital letter for constructors
   "new-cap": [2, {newIsCap: true, capIsNew: false}], // TODO Babel
   // * [new-parens](new-parens.md) - disallow the omission of parentheses when invoking a constructor with no arguments
@@ -354,7 +354,7 @@ export default {
   // * [space-in-parens](space-in-parens.md) - require or disallow spaces inside parentheses (fixable)
   "space-in-parens": [2, "never"],
   // * [space-infix-ops](space-infix-ops.md) - require spaces around operators (fixable)
-  "space-infix-ops": [2],
+  "space-infix-ops": [0], // TODO: See https://github.com/eslint/eslint/issues/3587
   // * [space-unary-ops](space-unary-ops.md) - require or disallow spaces before/after unary operators (fixable)
   "space-unary-ops": [2, {words: true, nonwords: false}],
   // * [spaced-comment](spaced-comment.md) - require or disallow a space immediately following the `//` or `/*` in a comment
@@ -402,7 +402,7 @@ export default {
   // * [prefer-template](prefer-template.md) - suggest using template literals instead of strings concatenation
   "prefer-template": [2],
   // * [require-yield](require-yield.md) - disallow generator functions that do not have `yield`
-  "require-yield": [2],
+  "require-yield": [0],
   // * [template-curly-spacing](template-curly-spacing.md) - enforce spacing around embedded expressions of template strings (fixable)
   "template-curly-spacing": [2, "never"],
   // * [yield-star-spacing](yield-star-spacing.md) - enforce spacing around the `*` in `yield*` expressions (fixable)

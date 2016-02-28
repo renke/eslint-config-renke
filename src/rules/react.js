@@ -42,7 +42,7 @@ export default {
   // jsx-boolean-value: Enforce boolean attributes notation in JSX (fixable)
   "react/jsx-boolean-value": [2, "always"],
   // jsx-closing-bracket-location: Validate closing bracket location in JSX
-  "react/jsx-closing-bracket-location": [2, {nonEmpty: "props-aligned", selfClosing: "props-aligned"}], // TODO
+  "react/jsx-closing-bracket-location": [2, {nonEmpty: "after-props", selfClosing: "tag-aligned"}], // TODO
   // jsx-curly-spacing: Enforce or disallow spaces inside of curly braces in JSX attributes (fixable)
   "react/jsx-curly-spacing": [2, "never"],
   // jsx-equals-spacing: Enforce or disallow spaces around equal signs in JSX attributes
@@ -56,7 +56,7 @@ export default {
   // jsx-key: Validate JSX has key prop when in array or iterator
   "react/jsx-key": [2],
   // jsx-max-props-per-line: Limit maximum of props on a single line in JSX
-  "react/jsx-max-props-per-line": [2, {maximum: 1}], // TODO
+  "react/jsx-max-props-per-line": [2, {maximum: 3}], // TODO
   // jsx-no-bind: Prevent usage of .bind() and arrow functions in JSX props
   "react/jsx-no-bind": [2, {ignoreRefs: false, allowArrowFunctions: false, allowBind: false}], // TODO
   // jsx-no-duplicate-props: Prevent duplicate props in JSX

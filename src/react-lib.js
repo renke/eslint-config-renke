@@ -1,4 +1,4 @@
-import browserConfig from "./node-lib";
+import browserConfig from "./browser-lib";
 import reactRules from "./rules/react";
 
 export default {
