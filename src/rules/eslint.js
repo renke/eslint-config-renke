@@ -202,7 +202,7 @@ export default {
   // * [no-undef-init](no-undef-init.md) - disallow use of undefined when initializing variables
   "no-undef-init": [2],
   // * [no-undefined](no-undefined.md) - disallow use of `undefined` variable
-  "no-undefined": [2],
+  "no-undefined": [0],
   // * [no-unused-vars](no-unused-vars.md) - disallow declaration of variables that are not used in the code (recommended)
   "no-unused-vars": [2, {vars: "all", args: "after-used"}],
   // * [no-use-before-define](no-use-before-define.md) - disallow use of variables before they are defined
